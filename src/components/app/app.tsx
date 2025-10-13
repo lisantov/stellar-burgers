@@ -48,7 +48,17 @@ const App = () => {
       <AppHeader />
       <Routes location={backgroundLocation || location}>
         <Route path='/' element={<ConstructorPage />} />
-        <Route path='/feed' element={<Feed />} />
+        <Route path='/feed'>
+          <Route index element={<Feed />} />
+          <Route
+            path=':number'
+            element={
+              <Layout title=''>
+                <OrderInfo />
+              </Layout>
+            }
+          />
+        </Route>
         <Route
           path='/login'
           element={
@@ -90,14 +100,26 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route
-            path='orders'
-            element={
-              <ProtectedRoute>
-                <ProfileOrders />
-              </ProtectedRoute>
-            }
-          />
+          <Route path='orders'>
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <ProfileOrders />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path=':number'
+              element={
+                <ProtectedRoute>
+                  <Layout title=''>
+                    <OrderInfo />
+                  </Layout>
+                </ProtectedRoute>
+              }
+            />
+          </Route>
         </Route>
         <Route
           path='/ingredients/:id'
@@ -137,9 +159,11 @@ const App = () => {
           <Route
             path='/profile/orders/:number'
             element={
-              <Modal onClose={closeModal} title=''>
-                <OrderInfo />
-              </Modal>
+              <ProtectedRoute>
+                <Modal onClose={closeModal} title=''>
+                  <OrderInfo />
+                </Modal>
+              </ProtectedRoute>
             }
           />
         </Routes>

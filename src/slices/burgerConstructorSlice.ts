@@ -42,6 +42,37 @@ export const burgerConstructorSlice = createSlice({
         state.burger.ingredients.push(newIngredient);
       }
     },
+    removeIngredient: (state, action: PayloadAction<string>) => {
+      state.burger.ingredients = state.burger.ingredients
+        .filter((ing) => ing.id !== action.payload)
+        .map((ing, index) => ({ ...ing, id: String(index) }));
+    },
+    moveIngredientUp: (state, action: PayloadAction<string>) => {
+      [
+        state.burger.ingredients[Number(action.payload) - 1],
+        state.burger.ingredients[Number(action.payload)]
+      ] = [
+        state.burger.ingredients[Number(action.payload)],
+        state.burger.ingredients[Number(action.payload) - 1]
+      ];
+      state.burger.ingredients = state.burger.ingredients.map((ing, index) => ({
+        ...ing,
+        id: String(index)
+      }));
+    },
+    moveIngredientDown: (state, action: PayloadAction<string>) => {
+      [
+        state.burger.ingredients[Number(action.payload) + 1],
+        state.burger.ingredients[Number(action.payload)]
+      ] = [
+        state.burger.ingredients[Number(action.payload)],
+        state.burger.ingredients[Number(action.payload) + 1]
+      ];
+      state.burger.ingredients = state.burger.ingredients.map((ing, index) => ({
+        ...ing,
+        id: String(index)
+      }));
+    },
     clearOrderData: (state) => {
       state.orderData = null;
     }
@@ -77,4 +108,10 @@ export const {
   orderDataSelector
 } = burgerConstructorSlice.selectors;
 
-export const { addIngredient, clearOrderData } = burgerConstructorSlice.actions;
+export const {
+  addIngredient,
+  clearOrderData,
+  removeIngredient,
+  moveIngredientUp,
+  moveIngredientDown
+} = burgerConstructorSlice.actions;

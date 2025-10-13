@@ -4,7 +4,7 @@ import { getOrdersApi } from '@api';
 
 export const getOrdersThunk = createAsyncThunk(
   'orders/getOrders',
-  async () => await getOrdersApi()
+  getOrdersApi
 );
 
 export interface OrdersState {
@@ -27,8 +27,8 @@ export const ordersSlice = createSlice({
   reducers: {},
   selectors: {
     ordersSelector: (state) => state.orders,
-    orderByIdSelector: (state) => (id: string) =>
-      state.orders.find((order) => order._id === id),
+    orderByNumberSelector: (state) => (number: number) =>
+      state.orders.find((order) => order.number === number),
     isLoadingSelector: (state) => state.isLoading,
     isInitSelector: (state) => state.isInit
   },
@@ -53,7 +53,7 @@ export const ordersSlice = createSlice({
 
 export const {
   ordersSelector,
-  orderByIdSelector,
+  orderByNumberSelector,
   isLoadingSelector,
   isInitSelector
 } = ordersSlice.selectors;

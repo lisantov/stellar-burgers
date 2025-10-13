@@ -4,7 +4,7 @@ import { getIngredientsApi } from '@api';
 
 export const getIngredientsThunk = createAsyncThunk(
   'ingredients/getIngredients',
-  async () => await getIngredientsApi()
+  getIngredientsApi
 );
 
 export interface IngredientsState {
