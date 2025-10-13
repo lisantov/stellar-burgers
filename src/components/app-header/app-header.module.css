@@ -1,0 +1,9 @@
+.link {
+  display: flex;
+  text-display: none;
+  color: var(--text-inactive-color);
+}
+
+.active {
+  color: var(--text-primary-color);
+}

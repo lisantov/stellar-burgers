@@ -2,7 +2,7 @@ import { ProfileMenuUI } from '@ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Example/ProfileMenu',
+  title: 'Example/Layout',
   component: ProfileMenuUI,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
