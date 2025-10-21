@@ -1,21 +1,49 @@
-import { FC, useMemo } from 'react';
+import { FC, useEffect, useMemo } from 'react';
 import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
-import { TIngredient } from '@utils-types';
+import { TIngredient, TOrder } from '@utils-types';
+import { useDispatch, useSelector } from '../../services/store';
+import { ingredientsSelector } from '../../slices/ingredientsSlice';
+import { useLocation, useParams } from 'react-router-dom';
+import {
+  feedByNumberSelector,
+  getFeedsThunk,
+  isInitSelector as feedsInitSelector
+} from '../../slices/feedSlice';
+import {
+  getOrdersThunk,
+  isInitSelector as orderInitSelector,
+  orderByNumberSelector
+} from '../../slices/ordersSlice';
+import { NotFound404 } from '@pages';
 
 export const OrderInfo: FC = () => {
-  /** TODO: взять переменные orderData и ingredients из стора */
-  const orderData = {
-    createdAt: '',
-    ingredients: [],
-    _id: '',
-    status: '',
-    name: '',
-    updatedAt: 'string',
-    number: 0
-  };
+  const params = useParams();
+  const dispatch = useDispatch();
+  const location = useLocation();
 
-  const ingredients: TIngredient[] = [];
+  const handleProfileOrder = () =>
+    useSelector((state) =>
+      orderByNumberSelector(state)(Number(params.number!))
+    );
+
+  const handleFeedOrder = () =>
+    useSelector((state) => feedByNumberSelector(state)(Number(params.number!)));
+
+  const isCurrentOrdersInit = location.pathname.includes('profile')
+    ? useSelector(orderInitSelector)
+    : useSelector(feedsInitSelector);
+
+  const orderData = location.pathname.includes('profile')
+    ? handleProfileOrder()
+    : handleFeedOrder();
+
+  const ingredients: TIngredient[] = useSelector(ingredientsSelector);
+
+  useEffect(() => {
+    if (location.pathname.includes('profile')) dispatch(getOrdersThunk());
+    else if (location.pathname.includes('feed')) dispatch(getFeedsThunk());
+  }, []);
 
   /* Готовим данные для отображения */
   const orderInfo = useMemo(() => {
@@ -58,6 +86,9 @@ export const OrderInfo: FC = () => {
       total
     };
   }, [orderData, ingredients]);
+
+  // Если в адресе страницы находится номер несуществующего заказа, то показываем ошибку
+  if (!orderData && isCurrentOrdersInit) return <NotFound404 />;
 
   if (!orderInfo) {
     return <Preloader />;
