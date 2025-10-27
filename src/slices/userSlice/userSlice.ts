@@ -1,17 +1,15 @@
 import { TUser } from '@utils-types';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {
-  forgotPasswordApi,
   getUserApi,
   loginUserApi,
   logoutApi,
   registerUserApi,
-  resetPasswordApi,
   TLoginData,
   TRegisterData,
   updateUserApi
-} from '@api';
-import { deleteCookie, setCookie } from '../utils/cookie';
+} from '../../utils/burger-api';
+import { deleteCookie, setCookie } from '../../utils/cookie';
 
 export const registerUserThunk = createAsyncThunk(
   'user/registerUser',
