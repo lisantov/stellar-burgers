@@ -8,9 +8,9 @@ import {
   isLoadingSelector,
   orderBurgerThunk,
   orderDataSelector
-} from '../../slices/burgerConstructorSlice/burgerConstructorSlice';
+} from '../../slices/burgerConstructorSlice';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { isInitSelector, userSelector } from '../../slices/userSlice/userSlice';
+import { isInitSelector, userSelector } from '../../slices/userSlice';
 
 export const BurgerConstructor: FC = () => {
   const dispatch = useDispatch();

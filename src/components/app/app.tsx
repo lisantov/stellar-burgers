@@ -23,8 +23,8 @@ import { ProtectedRoute } from '../protected-route';
 import { AppHeader, IngredientDetails, Modal, OrderInfo } from '@components';
 import { useDispatch } from '../../services/store';
 import { useEffect } from 'react';
-import { getIngredientsThunk } from '../../slices/ingredientsSlice/ingredientsSlice';
-import { getUserThunk } from '../../slices/userSlice/userSlice';
+import { getIngredientsThunk } from '../../slices/ingredientsSlice';
+import { getUserThunk } from '../../slices/userSlice';
 import { Layout } from '../layout';
 
 const App = () => {

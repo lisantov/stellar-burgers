@@ -5,7 +5,7 @@ import {
   isInitSelector,
   isLoadingSelector,
   userSelector
-} from '../../slices/userSlice/userSlice';
+} from '../../slices/userSlice';
 import { Preloader } from '@ui';
 
 interface ProtectedRouteProps {

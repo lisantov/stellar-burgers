@@ -3,18 +3,18 @@ import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
 import { TIngredient, TOrder } from '@utils-types';
 import { useDispatch, useSelector } from '../../services/store';
-import { ingredientsSelector } from '../../slices/ingredientsSlice/ingredientsSlice';
+import { ingredientsSelector } from '../../slices/ingredientsSlice';
 import { useLocation, useParams } from 'react-router-dom';
 import {
   feedByNumberSelector,
   getFeedsThunk,
   isInitSelector as feedsInitSelector
-} from '../../slices/feedSlice/feedSlice';
+} from '../../slices/feedSlice';
 import {
   getOrdersThunk,
   isInitSelector as orderInitSelector,
   orderByNumberSelector
-} from '../../slices/ordersSlice/ordersSlice';
+} from '../../slices/ordersSlice';
 import { NotFound404 } from '@pages';
 
 export const OrderInfo: FC = () => {

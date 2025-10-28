@@ -7,7 +7,7 @@ import {
   feedsSelector,
   getFeedsThunk,
   isLoadingSelector
-} from '../../slices/feedSlice/feedSlice';
+} from '../../slices/feedSlice';
 
 export const Feed: FC = () => {
   const dispatch = useDispatch();
