@@ -8,7 +8,7 @@ import {
   TLoginData,
   TRegisterData,
   updateUserApi
-} from '../../utils/burger-api';
+} from '@api';
 import { deleteCookie, setCookie } from '../../utils/cookie';
 
 export const registerUserThunk = createAsyncThunk(
@@ -58,7 +58,7 @@ export interface UserState {
   error: string | null;
 }
 
-const initialState: UserState = {
+export const initialState: UserState = {
   isInit: false,
   isLoading: false,
   user: null,
@@ -118,6 +118,8 @@ export const userSlice = createSlice({
       .addCase(getUserThunk.rejected, (state, action) => {
         state.isInit = true;
         state.isLoading = false;
+        state.error =
+          action.error.message || 'Ошибка при получении пользователя';
       })
       .addCase(getUserThunk.fulfilled, (state, { payload }) => {
         state.isInit = true;
@@ -166,3 +168,5 @@ export const {
   userSelector,
   errorSelector
 } = userSlice.selectors;
+
+export const reducer = userSlice.reducer;

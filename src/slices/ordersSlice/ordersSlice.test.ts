@@ -57,7 +57,7 @@ const mockInitialState = {
 describe('Тестирование ordersSlice', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    const feedsMock = jest
+    const ordersMock = jest
       .spyOn(burgerApi, 'getOrdersApi')
       .mockImplementation(() => Promise.resolve(mockOrders));
   });

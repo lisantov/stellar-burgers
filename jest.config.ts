@@ -33,7 +33,24 @@ const config: Config = {
   // ],
 
   // Indicates which provider should be used to instrument code for coverage
+  moduleNameMapper: {
+    '^@pages': '<rootDir>/src/pages',
+    '^@components': '<rootDir>/src/components',
+    '^@ui': '<rootDir>/src/components/ui',
+    '^@ui-pages': '<rootDir>/src/components/ui/pages',
+    '^@utils-types': '<rootDir>/src/utils/types',
+    '^@api': '<rootDir>/src/utils/burger-api.ts',
+    '^@slices': '<rootDir>/src/services/slices',
+    '^@selectors': '<rootDir>/src/services/selectors'
+  },
   coverageProvider: 'v8',
+  collectCoverageFrom: [
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/node_modules/**',
+    '!**/.storybook/**',
+    '!**/cypress/**',
+    '!**/vendor/**'
+  ],
   preset: 'ts-jest',
   transform: {
     // '^.+\\.[tj]sx?$' для обработки файлов js/ts с помощью `ts-jest`

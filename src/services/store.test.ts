@@ -19,7 +19,7 @@ describe('Тестирование хранилища store', () => {
       orderBurgerApi: jest.fn(),
       getFeedsApi: jest.fn()
     }));
-  })
+  });
 
   afterAll(() => {
     jest.clearAllMocks();

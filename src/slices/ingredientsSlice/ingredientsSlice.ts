@@ -1,7 +1,6 @@
 import { TIngredient } from '@utils-types';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getIngredientsApi } from '../../utils/burger-api';
-import { burgerConstructorSlice } from '../burgerConstructorSlice/burgerConstructorSlice';
+import { getIngredientsApi } from '@api';
 
 export const getIngredientsThunk = createAsyncThunk(
   'ingredients/getIngredients',
