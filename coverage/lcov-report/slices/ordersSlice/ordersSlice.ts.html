@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.44% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>51/59</span>
+                <span class='fraction'>61/61</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.9% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.44% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>51/59</span>
+                <span class='fraction'>61/61</span>
             </div>
         
             
@@ -122,7 +122,9 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -159,18 +161,20 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -197,7 +201,7 @@ export interface OrdersState {
   error: string | null;
 }
 &nbsp;
-const initialState: OrdersState = {
+export const initialState: OrdersState = {
   isInit: false,
   isLoading: false,
   orders: [],
@@ -209,27 +213,27 @@ export const ordersSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    ordersSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>orders,
-    orderByNumberSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; (n</span>umber: number) =&gt;
+    ordersSelector: (state) =&gt; state.orders,
+    orderByNumberSelector: (state) =&gt; (number: number) =&gt;
       state.orders.find((order) =&gt; order.number === number),
-    isLoadingSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>isLoading,
-    isInitSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>isInit
+    isLoadingSelector: (state) =&gt; state.isLoading,
+    isInitSelector: (state) =&gt; state.isInit
   },
   extraReducers: (builder) =&gt; {
     builder
       .addCase(getOrdersThunk.pending, (state) =&gt; {
-<span class="cstat-no" title="statement not covered" >        state.isLoading = true;</span>
+        state.isLoading = true;
       })
       .addCase(getOrdersThunk.rejected, (state, action) =&gt; {
-<span class="cstat-no" title="statement not covered" >        state.isLoading = false;</span>
-<span class="cstat-no" title="statement not covered" >        state.isInit = true;</span>
-<span class="cstat-no" title="statement not covered" >        state.error = action.error.message || 'Ошибка при получении заказов';</span>
+        state.isLoading = false;
+        state.isInit = true;
+        state.error = action.error.message<span class="branch-0 cbranch-no" title="branch not covered" > || 'Ошибка при получении заказов';</span>
       })
       .addCase(getOrdersThunk.fulfilled, (state, action) =&gt; {
-<span class="cstat-no" title="statement not covered" >        state.isLoading = false;</span>
-<span class="cstat-no" title="statement not covered" >        state.isInit = true;</span>
-<span class="cstat-no" title="statement not covered" >        state.error = null;</span>
-<span class="cstat-no" title="statement not covered" >        state.orders = action.payload;</span>
+        state.isLoading = false;
+        state.isInit = true;
+        state.error = null;
+        state.orders = action.payload;
       });
   }
 });
@@ -240,6 +244,8 @@ export const {
   isLoadingSelector,
   isInitSelector
 } = ordersSlice.selectors;
+&nbsp;
+export const reducer = ordersSlice.reducer;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -247,7 +253,7 @@ export const {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-28T04:45:22.635Z
+                at 2025-10-28T11:53:33.735Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

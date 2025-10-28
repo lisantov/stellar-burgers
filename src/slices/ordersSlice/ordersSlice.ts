@@ -14,7 +14,7 @@ export interface OrdersState {
   error: string | null;
 }
 
-const initialState: OrdersState = {
+export const initialState: OrdersState = {
   isInit: false,
   isLoading: false,
   orders: [],
@@ -57,3 +57,5 @@ export const {
   isLoadingSelector,
   isInitSelector
 } = ordersSlice.selectors;
+
+export const reducer = ordersSlice.reducer;

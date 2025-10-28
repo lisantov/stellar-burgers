@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1761626722658" clover="3.2.0">
-  <project timestamp="1761626722659" name="All files">
-    <metrics statements="764" coveredstatements="491" conditionals="41" coveredconditionals="39" methods="53" coveredmethods="21" elements="858" coveredelements="551" complexity="0" loc="764" ncloc="764" packages="6" files="7" classes="7"/>
+<coverage generated="1761652413765" clover="3.2.0">
+  <project timestamp="1761652413765" name="All files">
+    <metrics statements="766" coveredstatements="501" conditionals="51" coveredconditionals="48" methods="53" coveredmethods="25" elements="870" coveredelements="574" complexity="0" loc="766" ncloc="766" packages="6" files="7" classes="7"/>
     <package name="slices.burgerConstructorSlice">
       <metrics statements="119" coveredstatements="110" conditionals="10" coveredconditionals="10" methods="10" coveredmethods="5"/>
       <file name="burgerConstructorSlice.ts" path="C:\Users\lisan\OneDrive\Desktop\ВёрсткаВажное\praktikum\stellar-burgers\src\slices\burgerConstructorSlice\burgerConstructorSlice.ts">
@@ -276,9 +276,9 @@
       </file>
     </package>
     <package name="slices.ordersSlice">
-      <metrics statements="59" coveredstatements="51" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="1"/>
+      <metrics statements="61" coveredstatements="61" conditionals="11" coveredconditionals="10" methods="5" coveredmethods="5"/>
       <file name="ordersSlice.ts" path="C:\Users\lisan\OneDrive\Desktop\ВёрсткаВажное\praktikum\stellar-burgers\src\slices\ordersSlice\ordersSlice.ts">
-        <metrics statements="59" coveredstatements="51" conditionals="1" coveredconditionals="1" methods="5" coveredmethods="1"/>
+        <metrics statements="61" coveredstatements="61" conditionals="11" coveredconditionals="10" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -307,27 +307,27 @@
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
+        <line num="29" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="33" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="36" count="1" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <line num="40" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="44" count="1" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="45" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
@@ -338,6 +338,8 @@
         <line num="57" count="1" type="stmt"/>
         <line num="58" count="1" type="stmt"/>
         <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
       </file>
     </package>
     <package name="slices.userSlice">
