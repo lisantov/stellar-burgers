@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.84% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>56/66</span>
+                <span class='fraction'>68/68</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">92.3% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.84% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>56/66</span>
+                <span class='fraction'>68/68</span>
             </div>
         
             
@@ -129,7 +129,9 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -169,20 +171,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -210,7 +214,7 @@ export interface FeedsState {
   error: string | null;
 }
 &nbsp;
-const initialState: FeedsState = {
+export const initialState: FeedsState = {
   isInit: false,
   isLoading: false,
   feeds: [],
@@ -224,31 +228,31 @@ export const feedsSlice = createSlice({
   initialState,
   reducers: {},
   selectors: {
-    feedsSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>feeds,
-    feedByNumberSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; (n</span>um: number) =&gt;
+    feedsSelector: (state) =&gt; state.feeds,
+    feedByNumberSelector: (state) =&gt; (num: number) =&gt;
       state.feeds.find((feed) =&gt; feed.number === num),
-    totalFeedsSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>totalFeeds,
-    todayFeedsSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>todayFeeds,
-    isLoadingSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>isLoading,
-    isInitSelector: <span class="fstat-no" title="function not covered" >(state) =&gt; state.</span>isInit
+    totalFeedsSelector: (state) =&gt; state.totalFeeds,
+    todayFeedsSelector: (state) =&gt; state.todayFeeds,
+    isLoadingSelector: (state) =&gt; state.isLoading,
+    isInitSelector: (state) =&gt; state.isInit
   },
   extraReducers: (builder) =&gt; {
     builder
       .addCase(getFeedsThunk.pending, (state) =&gt; {
-<span class="cstat-no" title="statement not covered" >        state.isLoading = true;</span>
+        state.isLoading = true;
       })
       .addCase(getFeedsThunk.rejected, (state, action) =&gt; {
-<span class="cstat-no" title="statement not covered" >        state.isLoading = false;</span>
-<span class="cstat-no" title="statement not covered" >        state.isInit = true;</span>
-<span class="cstat-no" title="statement not covered" >        state.error = action.error.message || 'Ошибка при получении заказов';</span>
+        state.isLoading = false;
+        state.isInit = true;
+        state.error = action.error.message<span class="branch-0 cbranch-no" title="branch not covered" > || 'Ошибка при получении заказов';</span>
       })
       .addCase(getFeedsThunk.fulfilled, (state, action) =&gt; {
-<span class="cstat-no" title="statement not covered" >        state.isLoading = false;</span>
-<span class="cstat-no" title="statement not covered" >        state.isInit = true;</span>
-<span class="cstat-no" title="statement not covered" >        state.error = null;</span>
-<span class="cstat-no" title="statement not covered" >        state.feeds = action.payload.orders;</span>
-<span class="cstat-no" title="statement not covered" >        state.totalFeeds = action.payload.total;</span>
-<span class="cstat-no" title="statement not covered" >        state.todayFeeds = action.payload.totalToday;</span>
+        state.isLoading = false;
+        state.isInit = true;
+        state.error = null;
+        state.feeds = action.payload.orders;
+        state.totalFeeds = action.payload.total;
+        state.todayFeeds = action.payload.totalToday;
       });
   }
 });
@@ -261,6 +265,8 @@ export const {
   isLoadingSelector,
   isInitSelector
 } = feedsSlice.selectors;
+&nbsp;
+export const reducer = feedsSlice.reducer;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -268,7 +274,7 @@ export const {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-27T06:05:21.924Z
+                at 2025-10-28T04:45:22.635Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

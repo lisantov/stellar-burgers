@@ -13,7 +13,7 @@ export interface FeedsState {
   error: string | null;
 }
 
-const initialState: FeedsState = {
+export const initialState: FeedsState = {
   isInit: false,
   isLoading: false,
   feeds: [],
@@ -64,3 +64,5 @@ export const {
   isLoadingSelector,
   isInitSelector
 } = feedsSlice.selectors;
+
+export const reducer = feedsSlice.reducer;
