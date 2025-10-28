@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Preloader } from '../ui/preloader';
-import { IngredientDetailsUI } from '../ui/ingredient-details';
+import { Preloader } from '@ui';
+import { IngredientDetailsUI } from '@ui';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { useSelector } from '../../services/store';
 import { ingredientByIdSelector } from '../../slices/ingredientsSlice/ingredientsSlice';

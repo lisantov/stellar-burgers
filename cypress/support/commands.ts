@@ -35,3 +35,10 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('prepare', () => {
+  cy.intercept('GET', '/api/ingredients', {
+    fixture: 'ingredients.json'
+  });
+  cy.visit('http://localhost:4000/');
+});
