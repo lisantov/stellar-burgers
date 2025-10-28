@@ -55,12 +55,6 @@ const mockInitialState = {
 };
 
 describe('Тестирование ordersSlice', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    const ordersMock = jest
-      .spyOn(burgerApi, 'getOrdersApi')
-      .mockImplementation(() => Promise.resolve(mockOrders));
-  });
 
   describe('getOrdersThunk обрабатывается корректно', () => {
     test('Вызов getOrdersThunk обрабатывается корректно', () => {

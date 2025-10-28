@@ -13,9 +13,9 @@ describe('Проверяем корректность работы констр�
       });
       cy.visit('http://localhost:4000/');
       const bunButton = cy.get(`[data-cy=bun1]`);
+      bunButton.click();
       const bunTop = cy.get(`[data-cy=bun-top]`);
       const bunBottom = cy.get(`[data-cy=bun-bottom]`);
-      bunButton.click();
       bunTop.contains('Краторная булка N-200i (верх)');
       bunBottom.contains('Краторная булка N-200i (низ)');
     });

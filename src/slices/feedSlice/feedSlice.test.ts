@@ -63,13 +63,6 @@ const mockInitialState = {
 };
 
 describe('Тестирование feedSlice', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    const feedsMock = jest
-      .spyOn(burgerApi, 'getFeedsApi')
-      .mockImplementation(() => Promise.resolve(mockFeeds));
-  });
-
   describe('getFeedsThunk обрабатывается корректно', () => {
     test('Вызов getFeedsThunk обрабатывается корректно', () => {
       const action = { type: getFeedsThunk.pending.type };

@@ -29,57 +29,6 @@ const mockInitialState = {
 };
 
 describe('Тестирование userSlice', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    const registerMock = jest
-      .spyOn(burgerApi, 'registerUserApi')
-      .mockImplementation(() =>
-        Promise.resolve({
-          success: true,
-          refreshToken: 'mockRefreshToken',
-          accessToken: 'mockAccessToken',
-          user: mockUser
-        })
-      );
-
-    const loginMock = jest
-      .spyOn(burgerApi, 'loginUserApi')
-      .mockImplementation(() =>
-        Promise.resolve({
-          success: true,
-          refreshToken: 'mockRefreshToken',
-          accessToken: 'mockAccessToken',
-          user: mockUser
-        })
-      );
-
-    const userMock = jest
-      .spyOn(burgerApi, 'getUserApi')
-      .mockImplementation(() =>
-        Promise.resolve({
-          success: true,
-          user: mockUser
-        })
-      );
-
-    const updateUserMock = jest
-      .spyOn(burgerApi, 'updateUserApi')
-      .mockImplementation(() =>
-        Promise.resolve({
-          success: true,
-          user: mockUser
-        })
-      );
-
-    const logoutUserMock = jest
-      .spyOn(burgerApi, 'logoutApi')
-      .mockImplementation(() =>
-        Promise.resolve({
-          success: true
-        })
-      );
-  });
-
   describe('registerUserThunk обрабатывается корректно', () => {
     test('Вызов registerUserThunk обрабатывается корректно', () => {
       const action = { type: registerUserThunk.pending.type };

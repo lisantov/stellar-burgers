@@ -62,13 +62,6 @@ const mockInitialState = {
 };
 
 describe('Тестирование ingredientsSlice', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    const ingredientsMock = jest
-      .spyOn(burgerApi, 'getIngredientsApi')
-      .mockImplementation(() => Promise.resolve(mockIngredients));
-  });
-
   describe('getIngredientsThunk обрабатывается корректно', () => {
     test('Вызов getIngredientsThunk обрабатывается корректно', () => {
       const action = { type: getIngredientsThunk.pending.type };
