@@ -5,6 +5,11 @@ describe('Проверяем корректность создание зака�
     cy.setCookie('accessToken', 'mockAccessToken');
   });
 
+  afterEach(() => {
+    window.localStorage.removeItem('refreshToken');
+    cy.clearCookie('accessToken');
+  });
+
   it('Собираем бургер и отправляем заказ', () => {
     cy.intercept('GET', '/api/auth/user', {
       fixture: 'user.json'

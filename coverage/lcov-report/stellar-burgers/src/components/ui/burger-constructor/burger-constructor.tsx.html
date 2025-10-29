@@ -299,14 +299,13 @@
 <span class="cstat-no" title="statement not covered" >}) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >  &lt;section className={styles.burger_constructor}&gt;</span>
 <span class="cstat-no" title="statement not covered" >    {constructorItems.bun ? (</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className={`${styles.element} mb-4 mr-4`}&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div className={`${styles.element} mb-4 mr-4`} data-cy='bun-top'&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;ConstructorElement</span>
 <span class="cstat-no" title="statement not covered" >          type='top'</span>
 <span class="cstat-no" title="statement not covered" >          isLocked</span>
 <span class="cstat-no" title="statement not covered" >          text={`${constructorItems.bun.name} (верх)`}</span>
 <span class="cstat-no" title="statement not covered" >          price={constructorItems.bun.price}</span>
 <span class="cstat-no" title="statement not covered" >          thumbnail={constructorItems.bun.image}</span>
-<span class="cstat-no" title="statement not covered" >          data-cy='bun-top'</span>
 <span class="cstat-no" title="statement not covered" >        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    ) : (</span>
@@ -316,7 +315,7 @@
 <span class="cstat-no" title="statement not covered" >        Выберите булки</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )}</span>
-<span class="cstat-no" title="statement not covered" >    &lt;ul className={styles.elements} data-cy='ingredients'&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;ul className={styles.elements}&gt;</span>
 <span class="cstat-no" title="statement not covered" >      {constructorItems.ingredients.length &gt; 0 ? (</span>
 <span class="cstat-no" title="statement not covered" >        constructorItems.ingredients.map(</span>
 <span class="cstat-no" title="statement not covered" >          (item: TConstructorIngredient, index: number) =&gt; (</span>
@@ -337,14 +336,13 @@
 <span class="cstat-no" title="statement not covered" >      )}</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/ul&gt;</span>
 <span class="cstat-no" title="statement not covered" >    {constructorItems.bun ? (</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className={`${styles.element} mt-4 mr-4`}&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div className={`${styles.element} mt-4 mr-4`} data-cy='bun-bottom'&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;ConstructorElement</span>
 <span class="cstat-no" title="statement not covered" >          type='bottom'</span>
 <span class="cstat-no" title="statement not covered" >          isLocked</span>
 <span class="cstat-no" title="statement not covered" >          text={`${constructorItems.bun.name} (низ)`}</span>
 <span class="cstat-no" title="statement not covered" >          price={constructorItems.bun.price}</span>
 <span class="cstat-no" title="statement not covered" >          thumbnail={constructorItems.bun.image}</span>
-<span class="cstat-no" title="statement not covered" >          data-cy='bun-bottom'</span>
 <span class="cstat-no" title="statement not covered" >        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    ) : (</span>
@@ -359,13 +357,15 @@
 <span class="cstat-no" title="statement not covered" >        &lt;p className={`text ${styles.text} mr-2`}&gt;{price}&lt;/p&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;CurrencyIcon type='primary' /&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Button</span>
-<span class="cstat-no" title="statement not covered" >        htmlType='button'</span>
-<span class="cstat-no" title="statement not covered" >        type='primary'</span>
-<span class="cstat-no" title="statement not covered" >        size='large'</span>
-<span class="cstat-no" title="statement not covered" >        children='Оформить заказ'</span>
-<span class="cstat-no" title="statement not covered" >        onClick={onOrderClick}</span>
-<span class="cstat-no" title="statement not covered" >      /&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;div data-cy='order-button'&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;Button</span>
+<span class="cstat-no" title="statement not covered" >          htmlType='button'</span>
+<span class="cstat-no" title="statement not covered" >          type='primary'</span>
+<span class="cstat-no" title="statement not covered" >          size='large'</span>
+<span class="cstat-no" title="statement not covered" >          children='Оформить заказ'</span>
+<span class="cstat-no" title="statement not covered" >          onClick={onOrderClick}</span>
+<span class="cstat-no" title="statement not covered" >        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    {orderRequest &amp;&amp; (</span>
@@ -391,7 +391,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-28T13:25:52.556Z
+                at 2025-10-29T03:41:12.781Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
